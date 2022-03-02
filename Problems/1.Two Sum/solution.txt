@@ -1,5 +1,5 @@
-Solution 1 - With fixed array
-===============================
+Solution 1 - With fixed array, for loops
+============================================
 
 class Solution {
     int[] arr = new int[2];
@@ -16,3 +16,53 @@ class Solution {
         return arr;
     }
 }
+
+
+Solution 2 - With fixed array, while loop
+=============================================
+
+class Solution {
+    int[] arr = new int[2];
+    int i = 0;
+    public int[] twoSum(int[] nums, int target) {
+        while(i < nums.length)
+        {
+            int j = i+1;
+            while(j < nums.length)
+            {
+                 if(nums[i] + nums[j] == target)
+                {
+                    arr[0] = i;
+                    arr[1] = j;
+                }
+                j++;
+            }
+            i++;
+        }
+        return arr;
+    }
+}
+
+
+Solution 3 - With Hashmap
+============================================
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap();
+        
+        for(int i=0; i < nums.length ; i++)
+        {
+            int complement = target - nums[i];
+            if(map.containsKey(complement))
+            {
+                return new int[] {map.get(complement), i};
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        
+        return new int[] {};
+    }
+}
+
