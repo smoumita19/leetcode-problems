@@ -1,5 +1,42 @@
-Solution 1 - Using integer format
+Solution 1 - Using String format
 ===================================================
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        String reverse = "";
+        int original = x;
+        
+        if ( x == 0 )
+            return true;
+        
+        if ( x < 0 || x % 10 == 0 && x != 0) {
+            return false;
+        }
+        
+        while( x > 0)
+        {
+            int a = x%10;
+            reverse = reverse + a;
+            x = x/10;
+        }
+        
+        //int rev = Integer.parseInt(reverse);
+        String org = String.valueOf(original);  
+        
+        if( org.equals(reverse))
+            return true;
+        return false;
+    }
+}
+
+Status - Accepted
+Runtime - 57 ms
+Memory - 51.3 MB
+Language - Java
+
+Solution 2 - Using Integer format
+====================================================
 
 class Solution {
     public boolean isPalindrome(int x) {
@@ -27,8 +64,5 @@ class Solution {
 
 Status - Accepted
 Runtime - 13ms 
-Memory - 44MB
+Memory - 44 MB
 Language - Java
-
-
-Solution 2 - Using string format
