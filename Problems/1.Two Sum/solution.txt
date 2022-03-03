@@ -17,6 +17,10 @@ class Solution {
     }
 }
 
+Status - Accepted
+Runtime - 95 ms - 73 ms
+Memory - 45 MB
+Language - Java
 
 Solution 2 - With fixed array, while loop
 =============================================
@@ -43,6 +47,10 @@ class Solution {
     }
 }
 
+Status - Accepted
+Runtime - 41 ms
+Memory - 42.1 MB
+Language - Java
 
 Solution 3 - With Hashmap
 ============================================
@@ -66,3 +74,7 @@ class Solution {
     }
 }
 
+Status - Accepted
+Runtime - 4 ms
+Memory - 45 MB 
+Language - Java
