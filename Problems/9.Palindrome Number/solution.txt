@@ -1,6 +1,5 @@
 Solution 1 - Using String format
-===================================================
-
+====================================================
 class Solution {
     public boolean isPalindrome(int x) {
         
@@ -65,4 +64,34 @@ class Solution {
 Status - Accepted
 Runtime - 13ms 
 Memory - 44 MB
+Language - Java
+
+Solution 3 - Using half length
+====================================================
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        if ( x < 0 || x % 10 == 0 && x != 0) {
+            return false;
+        }
+        
+        int halfNumber = 0;
+        
+        while ( x > halfNumber)
+        {
+            int a = x%10;
+            halfNumber = halfNumber * 10 + a;
+            x = x/10;
+        }
+        
+        // x == halfNumber (For even length number)
+        // x == halfNumber/10 (For odd length number)
+        return x == halfNumber || x == halfNumber/10;
+    }
+}
+
+Status - Accepted
+Runtime - 11 ms
+Memory - 44.9 MB
 Language - Java
