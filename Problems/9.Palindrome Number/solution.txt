@@ -1,0 +1,34 @@
+Solution 1 - Using integer format
+===================================================
+
+class Solution {
+    public boolean isPalindrome(int x) {
+        
+        int reverse = 0;
+        int original = x;
+        
+        if ( x < 0 || x % 10 == 0 && x != 0) {
+            return false;
+        }
+        
+        while( x > 0)
+        {
+            int a = x%10;
+            reverse = reverse * 10 + a;
+            x = x/10;
+        }
+        
+        if( original == reverse )
+            return true;
+        
+        return false;
+    }
+}
+
+Status - Accepted
+Runtime - 13ms 
+Memory - 44MB
+Language - Java
+
+
+Solution 2 - Using string format
