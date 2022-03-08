@@ -1,0 +1,54 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+Solution 1 - Comparing the lists
+=========================================
+
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        
+        //If list1 is empty
+        if (list1 == null)
+            return list2;
+        
+        //If list2 is empty
+        if (list2 == null)
+            return list1;
+        
+        ListNode currentNode = new ListNode(0);
+        ListNode result = currentNode;
+        
+        int min = 0;
+        
+        while(list1 != null || list2 != null)
+        {
+            if( list1 == null || (list2 != null && list2.val < list1.val)) {
+                min = list2.val;
+                list2 = list2.next;
+            } else {
+                min = list1.val;
+                list1 = list1.next;
+            }
+            
+            currentNode.next = new ListNode(min);
+            currentNode = currentNode.next;
+        }
+        
+        return result.next;
+        
+        
+    }
+}
+
+
+Status - Accepted
+Runtime - 1 ms
+Memory - 44 MB 
+Language = Java
