@@ -1,0 +1,32 @@
+Solution 1 - Using Array
+================================
+
+class Solution {
+    int count = 0, outputNumbers = 0;
+    
+    public int removeDuplicates(int[] nums) {
+       
+        int k = 0;
+        int count = 0;
+        int indexCount = 0;
+        
+        for(int i=1; i<=nums.length-1; i++){
+            
+            if (nums[indexCount] != nums[i]) {
+                nums[count+1] = nums[i];
+                count++;
+            }
+            
+            indexCount++;
+            
+        }
+        
+        k = count+1;
+        return k;
+    }
+}
+
+
+Status - Accepted
+Runtime - 1 ms
+Memory - 48.4 MB
