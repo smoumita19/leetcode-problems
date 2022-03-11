@@ -1,0 +1,26 @@
+Solution 1 - Using range length cases
+=====================================
+
+class Solution {
+    
+    int total = 0;
+    public int countOdds(int low, int high) {
+        
+        if(low%2 == 0 && high%2 == 0){
+            total = (high-low)/2;
+        } 
+        
+        if ((low%2 != 0 && high%2 !=0) || (low%2 == 0 && high%2 !=0) || (low%2 !=0 && high%2 == 0)){
+            total = ((high-low)/2 + 1);
+        }                                                         
+        return total;
+        
+    }
+}
+
+Status - Accepted
+Runtime - 0 ms
+Memory - 39.8 MB
+Language - Java
+
+
