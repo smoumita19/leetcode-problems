@@ -1,0 +1,22 @@
+Solution 1 - Using trim
+==============================================
+
+class Solution {
+    public int lengthOfLastWord(String s) {
+    
+        //Trim to remove extra white spaces
+        String str = s.trim();
+        
+        //Split to get the individual words in an array
+        String[] strArr = str.split(" ");
+        
+        //Returning the last words length
+        return (strArr[strArr.length-1]).length();
+        
+    }
+}
+
+Status - Accepted
+Runtime - 1 ms
+Memory - 42.4 MB
+Language - Java
