@@ -1,0 +1,57 @@
+Solution 1 - Using two loops(O(n^2))
+==================================
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+        int prev = Integer.MIN_VALUE; 
+        
+        for(int i=0; i<nums.length; i++){
+            int sum = 0;
+            for(int j=i; j<nums.length; j++){
+                sum += nums[j];
+                if(sum > prev){
+                    prev = sum;
+                }
+            }
+        }
+        
+        return prev;
+    }
+}
+
+Status - Time Limit Exceeded.
+
+Solution 2 - Using Kadane's Algorithm(O(n))
+================================
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+        //To hold the max sum
+        int max = Integer.MIN_VALUE;
+        
+        //To hold the current sum
+        int sum = 0;
+        
+        for(int i=0; i<nums.length; i++){
+            sum += nums[i];
+            
+            if(sum > max){
+                max = sum;
+            }
+            
+            if(sum < 0){
+                sum = 0;
+            }
+            
+        }
+        
+        return max;
+        
+    }
+}
+
+Status - Accepted
+Runtime - 1 ms
+Memory - 73.8 MB
+Language - Java
