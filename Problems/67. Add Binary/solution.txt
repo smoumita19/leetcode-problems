@@ -1,1 +1,39 @@
 
+class Solution {
+    public String addBinary(String a, String b) {
+        long number1 = Long.parseLong(a);
+        long number2 = Long.parseLong(b);
+        int[] result = new int[Integer.MAX_VALUE];
+        int carry = 0, i = 0;
+        String str = "";
+        
+        while(number1 != 0 || number2 != 0){
+            
+            result[i++] = (int)(((number1 % 10) + (number2 % 10) + carry) % 2);
+            carry = (int)(((number1 % 10) + (number2 % 10) + carry) / 2);
+            
+            number1 = number1/10;
+            number2 = number2/10;
+            
+            
+        }
+        
+        if(carry != 0){
+            result[i++] = carry;
+        }
+        
+        if ( carry != 0) {
+           result[i++] = carry;
+        }
+        
+        
+        // while(result != 0){
+        //     int num = result % 10;
+        //     str = str + num;
+        //     result = result / 10;
+        // }
+                
+        return ;
+
+    }
+}
