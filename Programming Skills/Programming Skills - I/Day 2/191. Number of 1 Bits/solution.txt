@@ -1,3 +1,6 @@
+Solution 1 - Using AND operator and bitwise left operator
+=====================================================
+
 public class Solution {
     // you need to treat n as an unsigned value
      public int hammingWeight(int n) {
@@ -14,3 +17,8 @@ public class Solution {
     }
     
 }
+
+Status - Accepted
+Runtime - 1 ms
+Memory - 41.7 MB
+Language - Java
