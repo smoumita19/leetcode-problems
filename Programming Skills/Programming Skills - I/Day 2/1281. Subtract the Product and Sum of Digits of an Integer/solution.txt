@@ -1,3 +1,6 @@
+Solution 1 - Using placeholder
+========================================
+
 class Solution {
     public int subtractProductAndSum(int n) {
         
@@ -13,3 +16,9 @@ class Solution {
         
     }
 }
+
+
+Status - Accepted
+Runtime - 0 ms
+Memory - 41.1 MB
+Language - Java
